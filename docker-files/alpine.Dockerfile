@@ -4,7 +4,7 @@
 # https://github.com/nicolargo/glances
 #
 
-FROM alpine:3.13 as build
+FROM alpine:3.15 as build
 
 RUN apk add --no-cache \
   python3 \
@@ -54,7 +54,7 @@ CMD python3 -m glances -C /glances/conf/glances.conf $GLANCES_OPT
 
 
 #Create running images without any building dependency
-FROM alpine:3.13 as minimal
+FROM alpine:3.15 as minimal
 
 RUN apk add --no-cache \
   python3 \
